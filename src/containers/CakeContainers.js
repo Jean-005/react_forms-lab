@@ -44,7 +44,7 @@ const CakeContainers = () => {
     }
 
     return (
-        <>
+        <div className="container">
             {
                 filterCakesData.length == 0 ? (
                     <>
@@ -60,7 +60,7 @@ const CakeContainers = () => {
                     </>
                 )
             }
-        </>
+        </div>
     );
 }
 

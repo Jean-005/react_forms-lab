@@ -1,7 +1,7 @@
 const Cake = ({ cake }) => {
     return (
         <>
-            <li>
+            <li className="cake"> 
                 <h3>{cake.name}</h3>
                 <p>Ingredients:</p>
                 <ol>

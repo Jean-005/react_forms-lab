@@ -40,7 +40,8 @@ const RecipeForm = ({ cakes, registerRecipe }) => {
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
+            <h2>Enter your recipe:</h2>
+            <form onSubmit={handleSubmit} className="recipeForm">
                 <input
                     type="text"
                     name="Recipe Name"
