@@ -27,12 +27,12 @@ const SearchForm = ({ cakes, filteringCakes}) => {
     return (
         <>
             <form onSubmit={handleSubmit}>
-                <input type="text"
+                <input className="search" type="text"
                     name="search"
                     placeholder="Search for recipe"
                     value={search}
                     onChange={(event) => setSearch(event.target.value)} />
-                <input type="submit" value="Search" />
+                <input className= "submit" type="submit" value="Search" />
             </form>
         </>
     );
