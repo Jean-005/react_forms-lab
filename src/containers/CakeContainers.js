@@ -26,11 +26,16 @@ const CakeContainers = () => {
             rating: 5
         }
       ]);
+    
+    const registerRecipe = (recipe) => {
+        console.log(recipe);
+        setCakes([...cakes,recipe]);
+    }
 
     return ( 
         <>
             <CakeList cakes={cakes} />
-            <RecipeForm />
+            <RecipeForm  cakes={cakes} registerRecipe={registerRecipe}/>
             <SearchForm />
         </> 
     );
