@@ -38,16 +38,28 @@ const CakeContainers = () => {
     const filteringCakes = (filterCakesData) => {
         setFilterCakesData([...filterCakesData]);
     }
-console.log(filterCakesData);
+
+    const handleClearFilter = () => {
+        filteringCakes([]);
+    }
 
     return (
         <>
-            <SearchForm cakes={cakes} filteringCakes={filteringCakes}/>
-            <CakeList cakes={cakes} />
-            <RecipeForm cakes={cakes} registerRecipe={registerRecipe} />
-
-            <h3>Filtered Cakes</h3>
-            <CakeList cakes={filterCakesData} />
+            {
+                filterCakesData.length == 0 ? (
+                    <>
+                        <SearchForm cakes={cakes} filteringCakes={filteringCakes} />
+                        <CakeList cakes={cakes} />
+                        <RecipeForm cakes={cakes} registerRecipe={registerRecipe} />
+                    </>
+                ) : (<>
+                        <h3>Filtered Cakes</h3>
+                        <button onClick={handleClearFilter}>Clear Filter</button>
+                        <CakeList cakes={filterCakesData} />
+                        
+                    </>
+                )
+            }
         </>
     );
 }

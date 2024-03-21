@@ -5,25 +5,24 @@ const SearchForm = ({ cakes, filteringCakes}) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if(isValidation){
-            console.log("searching.."+search);
-            let filterData = cakes.filter(cake => cake.name.toLowerCase().includes(search.toLowerCase()));
-            const data = {
-                filterData
-            }
-            console.log(data);
-            filteringCakes(filterData);
-            return;
+        
+        let filterData = cakes.filter(cake => cake.name.toLowerCase().includes(search.toLowerCase()));
+        const data = {
+            filterData
         }
+        // console.log(data);
+        filteringCakes(filterData);
+        return;
+        
     }
 
-    const isValidation = () => {
-        let validation = true;
-        if(search === ""){
-            validation = false;
-        }
-        return validation;
-    }
+    // const isValidation = () => {
+    //     let validation = true;
+    //     if(search === ""){
+    //         validation = false;
+    //     }
+    //     return validation;
+    // }
 
     return (
         <>
