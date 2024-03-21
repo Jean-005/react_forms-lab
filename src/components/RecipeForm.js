@@ -7,14 +7,14 @@ const RecipeForm = ({ cakes, registerRecipe }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if(isValidation){
+        if (isValidation) {
             let ingredientList = []
             ingredientList.push(ingredients);
 
             const recipe = {
-                name:recipeName,
-                ingredients:ingredientList,
-                rating:rating
+                name: recipeName,
+                ingredients: ingredientList,
+                rating: rating
             }
 
             registerRecipe(recipe);
@@ -30,7 +30,7 @@ const RecipeForm = ({ cakes, registerRecipe }) => {
             validation = false;
         }
 
-        if(cakes.find(cake => cake.name === recipeName)){
+        if (cakes.find(cake => cake.name === recipeName)) {
             alert("Cake already exists");
             validation = false;
         }

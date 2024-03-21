@@ -3,6 +3,7 @@ import CakeList from "../components/CakeList"
 import RecipeForm from "../components/RecipeForm"
 import SearchForm from "../components/SearchForm"
 
+
 const CakeContainers = () => {
     const [cakes, setCakes] = useState([
         {
@@ -25,20 +26,30 @@ const CakeContainers = () => {
             ingredients: ["carrots", "walnuts", "oil", "cream cheese", "flour", "sugar"],
             rating: 5
         }
-      ]);
-    
+    ]);
+
+    const [filterCakesData, setFilterCakesData] = useState([]);
+
     const registerRecipe = (recipe) => {
         console.log(recipe);
-        setCakes([...cakes,recipe]);
+        setCakes([...cakes, recipe]);
     }
 
-    return ( 
+    const filteringCakes = (filterCakesData) => {
+        setFilterCakesData([...filterCakesData]);
+    }
+console.log(filterCakesData);
+
+    return (
         <>
+            <SearchForm cakes={cakes} filteringCakes={filteringCakes}/>
             <CakeList cakes={cakes} />
-            <RecipeForm  cakes={cakes} registerRecipe={registerRecipe}/>
-            <SearchForm />
-        </> 
+            <RecipeForm cakes={cakes} registerRecipe={registerRecipe} />
+
+            <h3>Filtered Cakes</h3>
+            <CakeList cakes={filterCakesData} />
+        </>
     );
 }
- 
+
 export default CakeContainers;
